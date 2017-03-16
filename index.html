@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="countdown">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Countdown</title>
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/countdown.css">
+</head>
+<body>
+  <div id="page-wrapper">
+    <div id="countdown-container" ng-controller="countdownController">
+      <div id="countdown-title">
+        Time remaining till <span id="till">{{deadline}}</span>
+      </div>
+      <div id="countdown">
+        <div class="count-part" id="days">{{ counterParts.days }}</div>
+        <div class="counter-separator">:</div>
+        <div class="count-part" id="hours">{{ counterParts.hours }}</div>
+        <div class="counter-separator">:</div>
+        <div class="count-part" id="mins">{{ counterParts.mins }}</div>
+        <div class="counter-separator">:</div>
+        <div class="count-part" id="sec">{{ counterParts.sec }}</div>
+      </div>
+      <div id="finished" ng-show="isFinished">FINISHED</div>
+    </div>
+  </div>
+  <script src="libs/angular.min.js"></script>
+  <script src="app/index.js"></script>
+  <script src="app/services/countdownService.js"></script>
+  <script src="app/controllers/countdownController.js"></script>
+</body>
+</html>
